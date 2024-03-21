@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="contact.css">
+    <script type= "text/javascript" src = "countries.js">
+    </script>
+</head>
+<body>
+    <h2>Contact Me</h2>
+    <form>
+        <label for ="fname">First Name:</label><br>
+        <input type = "text" id="fname" name="fname"><br>
+
+        <label for ="lname">Last Name:</label><br>
+        <input type = "text" id="lname" name="lname"><br>
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" name="gender" value="male" checked> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> Other<br>
+
+        <label for="mobnumber">Mobile Number:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+
+        <label for="email">Enter your email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        
+        <select onchange="print_state('state',this.selectedIndex);" id="country" name ="country"></select><br>
+        <select name ="state" id ="state"></select><br>
+        <script language="javascript">print_country("country");</script><br>
+
+        <label for ="Hobbies">Hobbies:</label><br>
+        <input type="checkbox" id="Playing chess" name="Playing Chess" value="game">
+        <label for="Playing Chess"> Playing Chess</label><br>
+        <input type="checkbox" id="Reading Books" name="Reading Books" value="Reading Books">
+        <label for="Reading Books"> Reading Books</label><br>
+        <input type="checkbox" id="Cooking" name="Cooking" value="Cooking">
+        <label for="Cooking"> Cooking</label><br><br>
+        
+        <input type="button" onclick="myFunction()" value="Submit form">
+        <p>click submit to view to form details.</p>
+        </form>
+        
+        <div id = "display result">
+        </div>
+
+        <script>
+            function myFunction(){
+                var fname = document.getElementById('fname').value;
+                var lname = document.getElementById('lname').value;
+                var email = document.getElementById('email').value;
+                var phone = document.getElementById('phone').value;
+
+                var result = document.getElementById('display result');
+                result.innerHTML="fname"+fname+"<br> lname:"+lname+"<br> email:"+email+"<br> phone:"+phone;
+            }
+            </script>
+        
+</body>
+</html>
